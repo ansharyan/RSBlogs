@@ -1,0 +1,66 @@
+
+.footer{
+    display: flex;
+    bottom: 0%;
+    padding: 15px 15px 30px 15px;
+    margin: 20px 0 0 0; 
+    height: max-content;
+    background-color: var(--background-color3);
+    
+}
+
+.footer .about{
+    display: flex;
+    width: 50vw;
+}
+.footer .logo{
+    margin: 0 10px 0 15px; 
+}
+.footer .logo img{
+    height: 23px;
+    width: 28px;
+}
+.footer .about .details{
+    display: flex;
+    flex-direction: column;
+}
+.footer .about .details .title{
+    text-align: left;
+    font-weight: 450;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.footer .about .details .des{
+    text-align: left;
+    font-weight: 350;
+}
+
+.footer .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50vw;
+}
+.footer .links .pages a{
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--color5);
+    font-weight: 450;
+    margin: 30px;
+    transition: 0.3s;
+}
+.footer .links .pages a:hover{
+    color: var(--color5-hover);
+}
+.footer .links .social i{
+    font-size: 22px;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+.footer .links .social i:hover{
+    cursor: pointer;
+    color: white;
+    background-color: var(--color3);
+}

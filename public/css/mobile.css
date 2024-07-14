@@ -1,0 +1,50 @@
+@media (max-width: 670px) {
+    .container{
+        width: 100vw;
+    }
+    .container .content{
+        min-width: 100vw;
+    }
+    body{
+        font-size: small;
+    }
+    .para .imgtxt{
+        flex-wrap: wrap;
+    }
+
+    /* comment*/
+    .comments {
+        margin: 10px;
+        padding: 5px;
+    }
+    .comments .text-area{
+        width: 80vw;
+    }
+    .allComments{
+        margin: 10px;
+        padding: 5px;
+        font-size: smaller;
+    }
+    
+    .recent-posts{
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .intro img{
+        margin-right: 0 !important;
+    }
+
+    /* footer */
+    .footer{
+        font-size: smaller;
+        position: relative !important;
+    }
+    .footer .links .social{
+        display: none;
+    }
+
+    .btn{
+        font-size: small;
+    }
+}

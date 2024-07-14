@@ -1,0 +1,33 @@
+
+
+<% layout("/layouts/boilerplate") %>
+
+<div class="new-blog">
+    <h3 class="mt-5 mb-3">Create a New Blog</h3>
+    <div class="line mb-5"></div>
+    <form class="row g-3" method="POST" action="/blogs/createBlog" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <label for="heading" class="form-label">Heading</label>
+          <input type="text" class="form-control" id="heading" name="blog[heading]">
+        </div>
+        <div class="col-md-12">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="blog[title]">
+        </div>
+        <!-- <div class="col-md-12">
+            <label for="imgURL" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="imgURL" name="blog[imgURL]">
+        </div> -->
+        <div class="col-md-12">
+          <label for="imgURL" class="form-label">Upload Image</label>
+          <input type="file" class="form-control" id="imgURL" name="blog[imgURL]">
+      </div>
+        <div class="col-12">
+          <label for="content" class="form-label">Content</label>
+          <textarea type="text" class="form-control" id="content" placeholder="Write Blog Content" name="blog[content]" rows="10" required></textarea>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-def">Submit</button>
+        </div>
+      </form>
+</div>

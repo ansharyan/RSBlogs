@@ -1,0 +1,112 @@
+<% layout("/layouts/boilerplate") %>
+<div>
+  <div class="container">
+    <div class="content">
+      <h2><%= blog.heading%></h2>
+      <div class="para">
+        <h3><%= blog.title %></h3>
+        <div class="imgtxt">
+          <div class="main_imge"><img src="<%= blog.imgURL %>" alt="" /></div>
+          <!-- <div>
+            <P
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis beatae hic alias, reprehenderit dignissimos veniam
+              facere autem, sed voluptatem blanditiis explicabo aspernatur
+              quidem nam. Ipsa quo error sint perferendis voluptas.</P
+            >
+          </div> -->
+        </div>
+        <p><%= blog.content %></p>
+      </div>
+
+      <!-- <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/images/blogImage.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item active">
+                <img src="/images/blogImage.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div> -->
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="comments mb-4">
+    <% if(currUser){ %>
+    <h3 class="mt-3">Comment</h3>
+    <form
+      action="/blogs/<%= blog._id %>/comments/newcomment"
+      method="POST"
+      class="needs-validation"
+      novalidate
+    >
+      <div class="form-floating mt-3" style="width: 40vw">
+        <textarea
+          name="remarks"
+          class="form-control text-area"
+          placeholder="Leave a comment here"
+          id="commentArea"
+          style="height: 100px"
+          required
+        ></textarea>
+        <label for="commentArea">Leave a comment!!</label>
+        <div class="invalid-feedback">Write some comments!!</div>
+      </div>
+      <button class="btn btn-def mt-3 mb-3">Comment</button>
+    </form>
+    <% } %>
+  </div>
+
+  <div class="allComments">
+    <h5>Comments:</h5>
+    <% for(comment of blog.comments){ %>
+    <form
+      action="/blogs/<%= blog._id %>/comments/delete/<%= comment._id %>?_method=DELETE"
+      method="POST"
+    >
+      <div class="card text-bg-light mb-3" style="max-width: 30rem; z-index: 0">
+        <div class="card-header">
+          <%= comment.author.firstName %>&nbsp;(<i
+            >@<%= comment.author.username %></i
+          >)
+        </div>
+        <div class="card-body">
+          <p class="card-text"><%= comment.remarks %></p>
+        </div>
+        <% if(currUser && currUser._id.equals(comment.author._id)){ %>
+        <button
+          class="btn"
+          style="
+            width: fit-content;
+            color: var(--button-color);
+            color: rgba(141, 15, 15, 0.978);
+          "
+        >
+          Delete
+        </button>
+        <% } %>
+      </div>
+    </form>
+    <% } %>
+  </div>
+
+  <div class="line"></div>
+
+  <%- include("../includes/recentPosts.ejs") %>
+</div>

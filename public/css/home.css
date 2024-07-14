@@ -1,0 +1,49 @@
+.intro{
+    height: 80vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.intro img{
+    height: 280px;
+    width: 240px;
+    border-radius: 50%;
+    margin-right: 60px;
+}
+.home-info{
+   margin-top: 10vh;
+}
+
+.home-info .links i{
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: 0.3s;
+    color: white;
+    background-color: var(--color3);
+}
+.home-info .links i:hover{
+    background-color: whitesmoke;
+    
+    color: black;
+}
+
+.home .recent-posts{
+    width: 100vw;
+    margin-top: 7vh;
+    padding: 10vw;
+    padding-top: 0;
+}
+.recent-posts .card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* contact */
+.contact{
+    text-align: center;
+}

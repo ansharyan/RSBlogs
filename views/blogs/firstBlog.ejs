@@ -1,0 +1,74 @@
+<% layout("/layouts/boilerplate") %>
+<div>
+    <div class="container">
+        <div class="content">
+            <h2>FIRST BLOG</h2>
+            <div class="para">
+                <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores soluta optio veritatis necessitatibus enim voluptas blanditiis possimus corporis quos quasi harum, dolorum dolorem voluptatem ut cumque iure dignissimos, esse nisi!
+                Soluta deserunt obcaecati molestias iusto vero doloremque omnis veniam earum dolorem debitis. Quidem laboriosam, ut ea dignissimos at sequi sunt modi facilis explicabo deleniti veritatis quod voluptatum qui dicta similique?
+                Velit, nobis, deserunt at nostrum tempore ducimus error enim rem sapiente, excepturi voluptatem perferendis? Recusandae quia ullam aspernatur porro adipisci, suscipit sint et fugit, pariatur, optio praesentium animi ipsam perspiciatis.
+                Ab aspernatur praesentium nisi laborum libero ullam provident velit, consequatur, deserunt non natus, dolores beatae earum esse magnam reprehenderit omnis dolorem consequuntur necessitatibus est iure vero sint? Neque, laborum quas.
+                Quo, totam qui at amet doloribus maxime asperiores perferendis nisi eius excepturi enim voluptas neque quis consectetur quidem. Natus in perferendis, laudantium atque ipsum illum debitis! Aperiam alias cum eos?
+                Vitae, incidunt ad nesciunt similique iure aliquid tempora quisquam labore ipsa sit eius in quidem assumenda libero officia perspiciatis? Aperiam numquam laborum a odio amet! Beatae nobis incidunt cumque autem!
+                Eveniet voluptatibus odit quibusdam earum voluptatum asperiores aperiam, delectus optio reiciendis atque repudiandae distinctio vero provident nulla esse neque fuga perferendis recusandae debitis quam quas excepturi voluptas? Nesciunt, minus. Omnis.
+                Nesciunt nulla aspernatur tempora consectetur odit, officia possimus illum iusto autem hic dolorum suscipit exercitationem dolor, rem ullam sunt enim necessitatibus. Necessitatibus corporis ipsam eaque. Dolorum libero aperiam officiis voluptatum.
+                Vel eaque quasi minima dolores culpa! Animi quae nulla facere totam aperiam at recusandae, quam provident eveniet accusantium enim dolorem fugit ut est labore minus iure culpa eum architecto minima?
+                Sunt officiis a nesciunt beatae repellendus! At expedita magnam explicabo minima molestias, modi quae molestiae neque ad quidem! Quas optio architecto explicabo hic? Unde error aperiam nesciunt non sint blanditiis?</p>
+                <div class="imgtxt">
+                    <div class="main_imge"><img src="/images/blogImage.jpg" alt=""></div>
+                    <div><P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis beatae hic alias, reprehenderit dignissimos veniam facere autem, sed voluptatem blanditiis explicabo aspernatur quidem nam. Ipsa quo error sint perferendis voluptas.</P></div>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta reprehenderit dolorem sint sequi, tenetur velit omnis illum eos recusandae! Placeat ipsa sapiente illo repellat ratione eveniet aliquid fuga nobis sunt?
+                Doloribus esse delectus ullam qui impedit error, nesciunt odit omnis incidunt ut, dolore rem inventore deleniti cumque eveniet voluptatem quod repellendus enim exercitationem soluta assumenda? Ex molestias provident fuga expedita?
+                Illum saepe excepturi, itaque maxime maiores veniam nostrum vel eos temporibus. Provident repudiandae cumque amet culpa eaque nisi nulla ipsum maiores necessitatibus eos velit sequi, nostrum quasi ducimus labore excepturi.
+                Laudantium perspiciatis aperiam iste facilis maiores voluptas sed laboriosam, magnam rerum at temporibus, iure itaque ullam atque aspernatur voluptate error reprehenderit fugit? Magni, molestias expedita veniam assumenda dicta blanditiis ad.
+                Quisquam, ducimus? Eligendi animi hic quia esse qui corrupti beatae repudiandae quod. Pariatur laborum eveniet, impedit unde tempora assumenda sed nam repellendus obcaecati eos corrupti quas necessitatibus sint nobis hic?
+                Expedita non totam voluptas ab officiis tempora, saepe sapiente quis, enim ipsam maxime sed tenetur rerum quos dolorem delectus corporis assumenda. Quaerat voluptatibus vitae ut id quae dicta, similique eius!
+                Expedita qui adipisci iste nisi officiis, exercitationem pariatur ipsum atque dicta fugiat mollitia alias neque necessitatibus at nemo, rem aliquam commodi explicabo? Nisi aliquam beatae, deserunt fugit repellat odit odio.
+                Odit distinctio nesciunt eaque sint libero, reprehenderit ad, nobis modi voluptatibus mollitia hic consequatur delectus itaque possimus cupiditate magnam accusantium sunt! Minus sed ab, omnis fuga culpa odit ipsa dicta!
+                Dolores optio id sunt nihil facere rerum aspernatur incidunt. Hic animi obcaecati, eligendi commodi sint suscipit facere explicabo sequi fuga, dicta, corrupti dolorum magni fugit pariatur voluptatem tenetur iste quasi.
+                Aut, exercitationem. Necessitatibus quia aliquam nisi odio! Aperiam reiciendis eaque voluptatum fugiat fuga temporibus? Ab labore, deleniti rerum unde ut nam. Sequi praesentium quibusdam molestiae officiis dignissimos. Perferendis, rerum architecto.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="comments mb-4">
+        
+        <% if(currUser){ %>
+        <h3 class="mt-3 ">Comment</h3>
+        <form action="/blogs/comments/newcomment" method="POST" class="needs-validation" novalidate>
+            <div class="form-floating mt-3" style="width: 40vw;">
+                <textarea name="remarks" class="form-control text-area" placeholder="Leave a comment here" id="commentArea" style="height: 100px;" required></textarea>
+                <label for="commentArea">Leave a comment!!</label>
+                <div class="invalid-feedback">Write some comments!!</div>
+            </div>
+            <button class="btn btn-def mt-3 mb-3">Comment</button>
+        </form>
+        <% } %>
+    </div>
+
+    <div class="allComments">
+        <h5>Comments:</h5>
+        <% for(comment of allComments){ %>  
+        <form action="/blogs/comments/delete/<%= comment._id %>?_method=DELETE" method="POST" >
+        <div class="card text-bg-light mb-3" style="max-width: 30rem; z-index: 0;">
+            <div class="card-header"><%= comment.author.firstName %>&nbsp;(<i>@<%= comment.author.username %></i>)</div>
+            <div class="card-body">
+              <p class="card-text"><%= comment.remarks %></p>
+            </div>
+            <% if(currUser && currUser._id.equals(comment.author._id)){ %>
+            <button class="btn " style="width: fit-content; color: var(--button-color); color: rgba(141, 15, 15, 0.978);">Delete</button>
+            <% } %>
+        </div>
+        
+    </form>  
+        <% } %>
+    </div>
+
+    <div class="line"></div>
+
+    <%- include("../includes/recentPosts.ejs")  %>
+</div>

@@ -1,0 +1,29 @@
+.quicksand-light {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+:root{
+    --background-color1: #BFBFBF;
+    --background-color2: #808080;
+    --background-color2-transparent: #80808087;
+    --color3: #404040;
+    --color3-hover: #40404099;
+    --button-color : #633761;
+    --color5: #30574E;
+    --color6: #91ABA5;
+    --background-color3: #FEE6C4;
+    --background-color3-transparent: #fee6c4ac;
+}
+
+.line{
+    height: 2px;
+    width: 100%;
+    background-color: var(--background-color2);
+}
+
+.btn-def{
+    background-color: var(--button-color);
+    color: whitesmoke;
+}

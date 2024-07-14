@@ -1,0 +1,64 @@
+body{
+    text-align: center;
+    background-color: var();
+}
+
+.container{
+    text-align: left;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content{
+    margin: 5vh;
+    padding: 0 15px 0 15px;
+    width: 55vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1), 0 0 10px rgba(0, 0, 0, .1), 0 0 10px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+}
+.content h2{
+    margin-top: 20px;
+    padding-left: 15px;
+    color: var();
+}
+.para{
+    background-color: var();
+    margin-top: 30px;
+    padding: 15px 15px 15px 15px;
+    border-radius: 5px;
+}
+.para h3{
+    color: var();
+}
+.para p{
+    font-weight: 350;
+}
+.para .imgtxt{
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin: 15px 0 15px 0;
+}
+.para .imgtxt .main_imge img{
+    height: 100%;
+    width: 100%;
+    margin: 10px 15px 10px 5px;
+    border-radius: 5px;
+}
+.para .imgtxt p{
+
+}
+
+.allComments .card{
+    box-shadow:  0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/css/home.css" />
+
+<% layout("/layouts/boilerplate") %>
+<div class="home">
+  <div class="intro">
+    <img
+      src="/images/8bea7aae-99a0-41a8-9165-7981282a03e9_366u5ee_2k__1_-removebg-preview.png"
+    />
+    <div class="home-info">
+      <h4 style="opacity: 0.8">Hello, I'm</h4>
+      <h2 style="color: var(--color3)">ANSH ARYAN</h2>
+      <p style="opacity: 0.9">BIT Mesra</p>
+      <div class="links">
+        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-posts ml-3">
+    <h3 class="mb-3">Recent Posts:</h3>
+    <% for(blog of allBlogs){ %>
+      <a href="/blogs/blog/<%= blog._id %>" style="text-decoration: none;">
+    <div class="card mb-3" style="max-width: 70vw">
+      <div class="row g-0">
+        <div class="col-md-4"  >
+          <img src="<%= blog.imgURL  %>" class="img-fluid rounded-start card-img-top" alt="blogImg" style="max-height: 250px;" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.heading %></h5>
+            <p class="card-text">
+              <%= blog.title  %>
+            </p>
+            <p class="card-text">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+    </a>
+  </div>
+
+  <div class="contact">
+    <h2 style="opacity: 0.8">Contact Me</h2>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<style>
+  .signupForm {
+    font-size: larger;
+    margin-top: 8vh;
+  }
+  /* .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  } */
+</style>
+<% layout("/layouts/boilerplate") %>
+
+<div class="signupForm">
+  <h3 class="mb-2">SignUp</h3>
+  <div class="line mb-5"></div>
+  <form
+    method="POST"
+    action="/signup"
+    class="row g-3 needs-validation"
+    novalidate
+  >
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Ansh" name="firstName" required />
+      <div class="valid-feedback">Looks Good!</div>
+    </div>
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Aryan" name="lastName" required />
+      <div class="valid-feedback">Looks Good!</div>
+    </div>
+    <div class="col-12">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter a Email!"
+        name="email"
+        required
+      />
+      <div class="invalid-feedback">Enter a Username!</div>
+    </div>
+    <div class="col-12">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Enter a Username!"
+        name="username"
+        required
+      />
+      <div class="invalid-feedback">Enter a Username!</div>
+    </div>
+    <div class="col-12">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="text"
+        class="form-control"
+        id="password"
+        placeholder="Enter a Password!"
+        name="password"
+        required
+      />
+      <div class="invalid-feedback">Enter a Password!</div>
+    </div>
+    <button class="btn btn-def mb-3">Sign in</button>
+  </form>
+</div>
+
+
